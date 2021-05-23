@@ -23,7 +23,7 @@ fetch(url)
 
         cardText = document.createElement("p")
         cardText.setAttribute("class","card-text")
-        cardText.setAttribute()
+        cardText.innerText = progetto.de
     }
 })
 .catch(err => { throw err });
