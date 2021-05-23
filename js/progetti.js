@@ -3,6 +3,7 @@ let cardBtnText = "Guarda ora"
 
 let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNow/main/json/progetti.json';
 let projectsContainer = document.querySelector(".progettiContainer")
+let footer = document.querySelector("footer")
 
 fetch(url)
 .then(res => res.json())

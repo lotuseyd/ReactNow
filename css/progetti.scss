@@ -73,39 +73,6 @@ img{
     overflow: visible;
 }
   
-  
-.mainTitle{
-    color: #61DAFB;
-    font-weight: 600;
-}
-
-  
-.fa-arrow-right{
-    margin-left: 25px;
-    animation-name: anime-arrow;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: both;
-}
-  
-  
-@keyframes anime-arrow{
-    0%{
-        margin-left: 0px;
-        opacity: 0%;
-    }
-    50%{
-        opacity: 100%;
-    }
-    90%{
-        opacity: 50%;
-    }
-    100%{
-        margin-left: 50px;
-        opacity: 0%;
-    }
-}
 
 .card:hover{
     box-shadow: 8px 10px 13px -13px rgba(0,0,0,0.75);
