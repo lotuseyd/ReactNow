@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+img{
+    pointer-events: none;
+}
+  
+.navbar-brand{
+    color:#61DAFB !important;
+}
+  
+.nav-link{
+    color: #B4B4B4 !important;
+    margin-right: 22px;
+}
+
+.nav-link:nth-child(3){
+    color: white !important;
+}
+  
+.nav-link:nth-child(1){
+    margin-left: 44px;
+}
+  
+.nav-link:hover{
+    color: white !important;
+}
+  
+.navbar-toggler{
+    border: none;
+}
+  
+.navbar-toggler {
+    display: inline-block;
+    cursor: pointer;
+    z-index: 2;
+}
+    
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+  
+#menuDiv{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+    
+.change .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+    
+.change .bar2 {opacity: 0;}
+    
+.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+  
+.bg1{
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    height: 750px;
+    background-color: #212529;
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.25);
+    overflow: visible;
+}
+  
+  
+.mainTitle{
+    color: #61DAFB;
+    font-weight: 600;
+}
+
+  
+.fa-arrow-right{
+    margin-left: 25px;
+    animation-name: anime-arrow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+  
+  
+@keyframes anime-arrow{
+    0%{
+        margin-left: 0px;
+        opacity: 0%;
+    }
+    50%{
+        opacity: 100%;
+    }
+    90%{
+        opacity: 50%;
+    }
+    100%{
+        margin-left: 50px;
+        opacity: 0%;
+    }
+}
+
+.card:hover{
+    box-shadow: 8px 10px 13px -13px rgba(0,0,0,0.75);
+}
+  
+
+@media (max-width: 576px) { 
+    .bg1{
+        border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0%;
+        height: 650px;
+    }
+}
+  
+  
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .bg1{
+        border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0%;
+        height: 650px;
+    }
+}
+  
+  // Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+}
+  
+  // Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+}
+  
