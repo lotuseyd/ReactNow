@@ -38,8 +38,10 @@ fetch(url)
                     cardBadge.setAttribute("class","badge bg-danger")  
                 }else{
                     cardBadge.innerText = progetto.difficolta
-                    cardBadge.setAttribute("class","badge bg-light")  
+                    cardBadge.setAttribute("class","badge bg-info")  
                 }
+
+        cardTitle.appendChild(cardBadge)
 
         cardText = document.createElement("p")
         cardText.setAttribute("class","card-text")
@@ -47,12 +49,14 @@ fetch(url)
 
         cardBtn =  document.createElement("a")
         cardBtn.setAttribute("class","btn btn-dark")
+        cardBtn.setAttribute("data-bs-toggle","modal")
+        cardBtn.setAttribute("data-bs-target","#myModal")
         cardBtn.innerText = cardBtnText
+
 
         cardBody = document.createElement("div")
         cardBody.setAttribute("class","card-body")
         cardBody.appendChild(cardTitle)
-        cardBody.appendChild(cardBadge)
         cardBody.appendChild(cardText)
         cardBody.appendChild(cardBtn)
 
@@ -61,7 +65,7 @@ fetch(url)
         card.appendChild(cardBody)
         card.classList.add('card',anime)
         projectsContainer.appendChild(card)
-        setTimeout("", .2)
+        setTimeout("", .1)
     }
 })
 .catch(err => { throw err });
@@ -88,26 +92,3 @@ function navToggler(x) {
     }
     x.classList.toggle("change");
 }
-
-function mainBtnOver(){
-    var btn = document.querySelector("#mainBtn")
-    var btnOutline = document.querySelector("#mainBtnOuterLine")
-    var arrow = document.querySelector(".fa-arrow-right")
-
-    btn.style.backgroundColor = "#A0E9FD"
-    btnOutline.style.top = "0"
-    btnOutline.style.left = "0"
-    arrow.style.animationName = "Nessuna"
-}
-
-function mainBtnOut(){
-    var btn = document.querySelector("#mainBtn")
-    var btnOutline = document.querySelector("#mainBtnOuterLine")
-    var arrow = document.querySelector(".fa-arrow-right")
-
-    btn.style.backgroundColor = "white"
-    btnOutline.style.top = "10px"
-    btnOutline.style.left = "10px"
-    arrow.style.animationName = "anime-arrow"
-}
-

@@ -85,9 +85,18 @@ img {
   font-weight: 600;
 }
 
+.mainSemiTitle {
+  margin-bottom: 240px;
+}
+
 .card {
   margin-bottom: 30px;
   opacity: 0;
+}
+
+.badge {
+  float: right;
+  font-weight: 400;
 }
 
 .card:hover {
@@ -159,6 +168,33 @@ img {
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 0%;
     height: 650px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .mainSemiTitle {
+    margin-bottom: 290px;
+  }
+  .bg1 {
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .mainSemiTitle {
+    margin-bottom: 260px;
+  }
+  .bg1 {
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+  }
+}
+
+@media (min-width: 1199.98px) {
+  .bg1 {
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
   }
 }
 /*# sourceMappingURL=progetti.css.map */
