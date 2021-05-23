@@ -85,57 +85,65 @@ img {
   font-weight: 600;
 }
 
-.fa-arrow-right {
-  margin-left: 25px;
-  -webkit-animation-name: anime-arrow;
-          animation-name: anime-arrow;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-}
-
-@-webkit-keyframes anime-arrow {
-  0% {
-    margin-left: 0px;
-    opacity: 0%;
-  }
-  50% {
-    opacity: 100%;
-  }
-  90% {
-    opacity: 50%;
-  }
-  100% {
-    margin-left: 50px;
-    opacity: 0%;
-  }
-}
-
-@keyframes anime-arrow {
-  0% {
-    margin-left: 0px;
-    opacity: 0%;
-  }
-  50% {
-    opacity: 100%;
-  }
-  90% {
-    opacity: 50%;
-  }
-  100% {
-    margin-left: 50px;
-    opacity: 0%;
-  }
+.card {
+  margin-bottom: 30px;
+  opacity: 0;
 }
 
 .card:hover {
   -webkit-box-shadow: 8px 10px 13px -13px rgba(0, 0, 0, 0.75);
           box-shadow: 8px 10px 13px -13px rgba(0, 0, 0, 0.75);
+}
+
+.cardAnimetion1 {
+  -webkit-animation: slide-up .5s ease-in-out;
+          animation: slide-up .5s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.cardAnimetion2 {
+  -webkit-animation: slide-up .4s ease-in-out;
+          animation: slide-up .4s ease-in-out;
+  -webkit-animation-delay: .1s;
+          animation-delay: .1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.cardAnimetion3 {
+  -webkit-animation: slide-up .3s ease-in-out;
+          animation: slide-up .3s ease-in-out;
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slide-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 @media (max-width: 576px) {

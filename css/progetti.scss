@@ -73,11 +73,47 @@ img{
     overflow: visible;
 }
   
+.mainTitle{
+    color: #61DAFB;
+    font-weight: 600;
+}
+
+.card{
+    margin-bottom: 30px;
+    opacity: 0;
+}
 
 .card:hover{
     box-shadow: 8px 10px 13px -13px rgba(0,0,0,0.75);
 }
+
+.cardAnimetion1{
+    animation: slide-up .5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.cardAnimetion2{
+    animation: slide-up .4s ease-in-out;
+    animation-delay: .1s;
+    animation-fill-mode: forwards;
+}
+
+.cardAnimetion3{
+    animation: slide-up .3s ease-in-out;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+}
   
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 @media (max-width: 576px) { 
     .bg1{

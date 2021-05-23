@@ -3,12 +3,21 @@ let cardBtnText = "Guarda ora"
 
 let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNow/main/json/progetti.json';
 let projectsContainer = document.querySelector(".progettiContainer")
-let footer = document.querySelector("footer")
+let animeIndex = 0
+let anime = ""
 
 fetch(url)
 .then(res => res.json())
 .then((out) => {
     for (progetto of out) {
+        animeIndex++
+        if(animeIndex==1){
+            anime = "cardAnimetion1"
+        }else if(animeIndex==2){
+                anime = "cardAnimetion2"
+            }else{
+                anime = "cardAnimetion2"
+            }
         cardHeader = document.createElement("div")
         cardHeader.setAttribute("class","card-header")
         cardHeader.innerText = progetto.titolo
@@ -27,15 +36,16 @@ fetch(url)
 
         cardBody = document.createElement("div")
         cardBody.setAttribute("class","card-body")
-        cardBody.appendChild(cardTitle);
-        cardBody.appendChild(cardText);
-        cardBody.appendChild(cardBtn);   
+        cardBody.appendChild(cardTitle)
+        cardBody.appendChild(cardText)
+        cardBody.appendChild(cardBtn)
 
         card = document.createElement("div")
-        card.setAttribute("class","card mb-4")
-        card.appendChild(cardHeader);
-        card.appendChild(cardBody);
-        projectsContainer.appendChild(card);
+        card.appendChild(cardHeader)
+        card.appendChild(cardBody)
+        card.classList.add('card',anime)
+        projectsContainer.appendChild(card)
+        setTimeout("", .2)
     }
 })
 .catch(err => { throw err });
