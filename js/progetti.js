@@ -3,17 +3,17 @@ let cardBtnText = "Guarda ora"
 
 let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNow/main/json/progetti.json';
 let projectsContainer = document.querySelector(".progettiContainer")
-let animeIndex = 0
+let Index = 0
 let anime = ""
 
 fetch(url)
 .then(res => res.json())
 .then((out) => {
     for (progetto of out) {
-        animeIndex++
-        if(animeIndex==1){
+        Index++
+        if(Index==1){
             anime = "cardAnimetion1"
-        }else if(animeIndex==2){
+        }else if(Index==2){
                 anime = "cardAnimetion2"
             }else{
                 anime = "cardAnimetion2"
@@ -47,12 +47,11 @@ fetch(url)
         cardText.setAttribute("class","card-text")
         cardText.innerText = progetto.descrizione
 
-        cardBtn =  document.createElement("a")
+        cardBtn =  document.createElement("button")
         cardBtn.setAttribute("class","btn btn-dark")
-        cardBtn.setAttribute("data-bs-toggle","modal")
-        cardBtn.setAttribute("data-bs-target","#myModal")
         cardBtn.innerText = cardBtnText
-
+        cardBtn.setAttribute("data-bs-toggle","modal")
+        cardBtn.setAttribute("data-bs-target","#staticBackdrop")
 
         cardBody = document.createElement("div")
         cardBody.setAttribute("class","card-body")
