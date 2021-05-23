@@ -5,7 +5,7 @@
         "descrizione":"Una semplice calcolatrice con: 1 select(operazione), 1 button(svolgimento calcolo) e 3 input(numero 1, numero 2 e risultato)"
     },
     {
-        "titolo1":"Progetto 2",
+        "titolo":"Progetto 2",
         "semiTitolo":"Calcolatrice v2",
         "descrizione":"Calcolatrice tradizione"
     }

@@ -1,29 +1,40 @@
-var navToggleCont = 0
-var cardBtnText = "Guarda ora"
+let navToggleCont = 0
+let cardBtnText = "Guarda ora"
 
 let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNow/main/json/progetti.json';
+let projectsContainer = document.querySelector(".progettiContainer")
 
 fetch(url)
 .then(res => res.json())
 .then((out) => {
     for (progetto of out) {
-        card = document.createElement("div")
-        card.setAttribute("class","card")
-
         cardHeader = document.createElement("div")
-        cardBody.setAttribute("class","card-header")
-        cardHeader.innerText = progetto.titolo1
+        cardHeader.setAttribute("class","card-header")
+        cardHeader.innerText = progetto.titolo
+    
+        cardTitle = document.createElement("h4")
+        cardTitle.setAttribute("class","card-title")
+        cardTitle.innerText = progetto.semiTitolo
 
-        cardBody = document.createElement("div")
-        cardBody.setAttribute("class","card-body")
+        cardText = document.createElement("p")
+        cardText.setAttribute("class","card-text")
+        cardText.innerText = progetto.descrizione
 
         cardBtn =  document.createElement("a")
         cardBtn.setAttribute("class","btn btn-dark")
         cardBtn.innerText = cardBtnText
 
-        cardText = document.createElement("p")
-        cardText.setAttribute("class","card-text")
-        cardText.innerText = progetto.de
+        cardBody = document.createElement("div")
+        cardBody.setAttribute("class","card-body")
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+        cardBody.appendChild(cardBtn);   
+
+        card = document.createElement("div")
+        card.setAttribute("class","card mb-4")
+        card.appendChild(cardHeader);
+        card.appendChild(cardBody);
+        projectsContainer.appendChild(card);
     }
 })
 .catch(err => { throw err });
