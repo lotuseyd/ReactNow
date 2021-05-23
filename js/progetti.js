@@ -26,6 +26,21 @@ fetch(url)
         cardTitle.setAttribute("class","card-title")
         cardTitle.innerText = progetto.semiTitolo
 
+        cardBadge = document.createElement("span")
+        if(progetto.difficolta=="Facile"){
+            cardBadge.innerText = "Facile"
+            cardBadge.setAttribute("class","badge bg-success")
+        }else if(progetto.difficolta=="Mediocre"){
+                cardBadge.innerText = "Mediocre"
+                cardBadge.setAttribute("class","badge bg-warning")  
+            }else if(progetto.difficolta=="Difficile"){
+                    cardBadge.innerText = "Difficile"
+                    cardBadge.setAttribute("class","badge bg-danger")  
+                }else{
+                    cardBadge.innerText = progetto.difficolta
+                    cardBadge.setAttribute("class","badge bg-light")  
+                }
+
         cardText = document.createElement("p")
         cardText.setAttribute("class","card-text")
         cardText.innerText = progetto.descrizione
@@ -37,6 +52,7 @@ fetch(url)
         cardBody = document.createElement("div")
         cardBody.setAttribute("class","card-body")
         cardBody.appendChild(cardTitle)
+        cardBody.appendChild(cardBadge)
         cardBody.appendChild(cardText)
         cardBody.appendChild(cardBtn)
 
