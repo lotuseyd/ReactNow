@@ -4,27 +4,27 @@
         "semiTitolo":"Calcolatrice",
         "descrizione":"Una semplice calcolatrice",
         "difficolta": "Facile",
-        "percorsoImg": "img/progetto1"
+        "NumImg": "5"
     },
     {
         "titolo":"Progetto 2",
         "semiTitolo":"Calcolatrice v2",
         "descrizione":"Calcolatrice tradizione",
         "difficolta": "Mediocre",
-        "percorsoImg": "img/progetto2"
+        "NumImg": "5"
     },
     {
         "titolo":"Progetto 3",
         "semiTitolo":"Calcolatrice v2",
         "descrizione":"Calcolatrice tradizione",
         "difficolta": "Facile",
-        "percorsoImg": "img/progetto3"
+        "NumImg": "5"
     },
     {
         "titolo":"Progetto 4",
         "semiTitolo":"Carello da spesa",
         "descrizione":"Calcolatrice tradizione",
         "difficolta": "Difficile",
-        "percorsoImg": "img/progetto4"
+        "NumImg": "5"
     }
 ]

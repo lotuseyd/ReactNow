@@ -1,20 +1,20 @@
 let navToggleCont = 0
 let cardBtnText = "Guarda ora"
 
-let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNow/main/json/progetti.json';
+let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNow/main/json/progetti/progetti.json';
 let projectsContainer = document.querySelector(".progettiContainer")
-let Index = 0
+let Index = -1
 let anime = ""
-let modelTitle = 
+let arrayCardTitoli=[]
 
 fetch(url)
 .then(res => res.json())
 .then((out) => {
     for (progetto of out) {
         Index++
-        if(Index==1){
+        if(Index==0){
             anime = "cardAnimetion1"
-        }else if(Index==2){
+        }else if(Index==1){
                 anime = "cardAnimetion2"
             }else{
                 anime = "cardAnimetion2"
@@ -26,6 +26,7 @@ fetch(url)
         cardTitle = document.createElement("h4")
         cardTitle.setAttribute("class","card-title")
         cardTitle.innerText = progetto.semiTitolo
+        arrayCardTitoli[Index] = progetto.semiTitolo
 
         cardBadge = document.createElement("span")
         if(progetto.difficolta=="Facile"){
@@ -69,6 +70,29 @@ fetch(url)
     }
 })
 .catch(err => { throw err });
+
+$(document).on('click','.btn-dark',function(){
+    let clickedBtnIndex = $('.btn-dark').index(this)
+    let modelTitle = document.querySelector('.modal-title')
+    modelTitle.innerHTML = arrayCardTitoli[clickedBtnIndex]
+
+    fetch(url)
+    .then(res => res.json())
+    .then((out) => {
+        for (progetto of out) {
+            carouselItem = document.createElement("div")
+            card.appendChild(cardHeader)
+            card.appendChild(cardBody)
+        }
+    })
+    .catch(err => { throw err });
+
+
+
+<div class="carousel-item active">
+    <img src="..." class="d-block w-100" alt="...">
+  </div>
+})
 
 function navToggler(x) {
     var md = document.querySelector("#menuDiv")
