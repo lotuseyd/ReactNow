@@ -5,6 +5,7 @@ let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNow/main/json/prog
 let projectsContainer = document.querySelector(".progettiContainer")
 let Index = 0
 let anime = ""
+let modelTitle = 
 
 fetch(url)
 .then(res => res.json())
