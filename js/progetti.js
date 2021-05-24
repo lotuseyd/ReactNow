@@ -1,17 +1,19 @@
 let navToggleCont = 0
 let cardBtnText = "Guarda ora"
 
-let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNow/main/json/progetti/progetti.json';
+let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNow/main/json/progetti.json';
 let projectsContainer = document.querySelector(".progettiContainer")
 let Index = -1
 let anime = ""
 let arrayCardTitoli=[]
+let arrayNumImg=[]
 
 fetch(url)
 .then(res => res.json())
 .then((out) => {
     for (progetto of out) {
         Index++
+        arrayNumImg[Index]=progetto.numImg
         if(Index==0){
             anime = "cardAnimetion1"
         }else if(Index==1){
@@ -74,31 +76,26 @@ fetch(url)
 $(document).on('click','.btn-dark',function(){
     let clickedBtnIndex = $('.btn-dark').index(this)
     let modelTitle = document.querySelector('.modal-title')
+    let arrayCardHeader = document.querySelector('.card-header')
+    let carouselContainer = document.querySelector('.carousel-inner')
+
     modelTitle.innerHTML = arrayCardTitoli[clickedBtnIndex]
 
     fetch(url)
     .then(res => res.json())
     .then((out) => {
-        for (progetto of out) {
+        for(let i=0;i<out[clickedBtnIndex].numImg;i++){
             carouselItem = document.createElement("div")
             carouselItem.setAttribute("class","carousel-item active")
-
-            for(let i=0;i<progetto.numImg;i++){
-                img = document.createElement("img")
-                img.setAttribute("class","d-block w-100")
-                carouselItem.appendChild(cardBody)
-            }
-
-
+            img = document.createElement("img")
+            img.setAttribute("class","d-block w-100")
+            img.src = "./img/progetti/" + arrayCardHeader[clickedBtnIndex+1] + "/" + i+1 + ".png"
+            carouselItem.appendChild(img)
+            carouselContainer.appendChild(carouselItem)
         }
+
     })
-    .catch(err => { throw err });
-
-
-
-<div class="">
-    <img src="..." class="d-block w-100" alt="...">
-  </div>
+    .catch(err => { throw err })
 })
 
 function navToggler(x) {
