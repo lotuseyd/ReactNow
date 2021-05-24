@@ -81,15 +81,22 @@ $(document).on('click','.btn-dark',function(){
     .then((out) => {
         for (progetto of out) {
             carouselItem = document.createElement("div")
-            card.appendChild(cardHeader)
-            card.appendChild(cardBody)
+            carouselItem.setAttribute("class","carousel-item active")
+
+            for(let i=0;i<progetto.numImg;i++){
+                img = document.createElement("img")
+                img.setAttribute("class","d-block w-100")
+                carouselItem.appendChild(cardBody)
+            }
+
+
         }
     })
     .catch(err => { throw err });
 
 
 
-<div class="carousel-item active">
+<div class="">
     <img src="..." class="d-block w-100" alt="...">
   </div>
 })
