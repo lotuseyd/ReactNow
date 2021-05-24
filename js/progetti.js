@@ -7,6 +7,7 @@ let Index = -1
 let anime = ""
 let arrayCardTitoli=[]
 let arrayNumImg=[]
+let spinner = document.querySelector(".divSpinner")
 
 fetch(url)
 .then(res => res.json())
@@ -70,6 +71,7 @@ fetch(url)
         projectsContainer.appendChild(card)
         setTimeout("", .1)
     }
+    spinner.style.display = "none"
 })
 .catch(err => { throw err });
 
@@ -78,24 +80,26 @@ $(document).on('click','.btn-dark',function(){
     let modelTitle = document.querySelector('.modal-title')
     let arrayCardHeader = document.querySelector('.card-header')
     let carouselContainer = document.querySelector('.carousel-inner')
+    $(".carousel-inner").empty()
+    let cont=1
+    let numPro = clickedBtnIndex+1
 
     modelTitle.innerHTML = arrayCardTitoli[clickedBtnIndex]
 
-    fetch(url)
-    .then(res => res.json())
-    .then((out) => {
-        for(let i=0;i<out[clickedBtnIndex].numImg;i++){
-            carouselItem = document.createElement("div")
+    for(let i=0;i<arrayNumImg[clickedBtnIndex];i++){
+        carouselItem = document.createElement("div")
+        if(i==0){
             carouselItem.setAttribute("class","carousel-item active")
-            img = document.createElement("img")
-            img.setAttribute("class","d-block w-100")
-            img.src = "./img/progetti/" + arrayCardHeader[clickedBtnIndex+1] + "/" + i+1 + ".png"
-            carouselItem.appendChild(img)
-            carouselContainer.appendChild(carouselItem)
+        }else{
+            carouselItem.setAttribute("class","carousel-item")
         }
-
-    })
-    .catch(err => { throw err })
+        img = document.createElement("img")
+        img.setAttribute("class","d-block w-100")
+        img.src = "./img/progetti/PROGETTO " + numPro + "/" + cont + ".png"
+        carouselItem.appendChild(img)
+        carouselContainer.appendChild(carouselItem)
+        cont++
+    }
 })
 
 function navToggler(x) {
