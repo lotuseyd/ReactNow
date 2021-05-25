@@ -1,12 +1,17 @@
+let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNowJson/main/json/progetti.json'
 let navToggleCont = 0
 let cardBtnText = "Guarda ora"
-
-let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNow/main/json/progetti.json';
-let projectsContainer = document.querySelector(".progettiContainer")
 let Index = -1
 let anime = ""
+let clickedBtnIndex = 0
+let arraylinkIndexJs = []
+let arraylinkIndexCss = []
+let arraylinkCompNome = []
+let arraylinkCompJsLink = []
+let arraylinkCompCssLink = []
 let arrayCardTitoli=[]
 let arrayNumImg=[]
+let projectsContainer = document.querySelector(".progettiContainer")
 let spinner = document.querySelector(".divSpinner")
 
 fetch(url)
@@ -14,7 +19,13 @@ fetch(url)
 .then((out) => {
     for (progetto of out) {
         Index++
+        arraylinkIndexJs[Index] = progetto.src.indexJs
+        arraylinkIndexCss[Index] = progetto.src.indexCss
+        arraylinkCompNome[Index] = progetto.src.compNome
+        arraylinkCompJsLink[Index] = progetto.src.compJsLink
+        arraylinkCompCssLink[Index] = progetto.src.compCssLink
         arrayNumImg[Index]=progetto.numImg
+
         if(Index==0){
             anime = "cardAnimetion1"
         }else if(Index==1){
@@ -72,19 +83,57 @@ fetch(url)
         setTimeout("", .1)
     }
     spinner.style.display = "none"
+
+    foot = `<footer class="bg-dark text-white text-center text-lg-start mt-5">
+    <div class="container p-4">
+      <div class="row">
+        <div class="d-flex flex-column align-items-center col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5>React Now</h5>
+          <p>
+            La guida che ti aiuta ad imparare React...
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Link Utili</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="./guida.html" class="text-white">Guida</a>
+            </li>
+            <li>
+              <a href="./progetti.html" class="text-white">Progetti</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-0">Powered By?</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://github.com/Palarvind03" target="_blank" class="text-white">Arvind Pal</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="text-center p-3" >
+      © 2020 Copyright:
+      <a class="text-white" href="#">ReactNow</a>
+    </div>
+  </footer>`
+  $(".footerCont").append(foot)
 })
 .catch(err => { throw err });
 
 $(document).on('click','.btn-dark',function(){
-    let clickedBtnIndex = $('.btn-dark').index(this)
+    clickedBtnIndex = $('.btn-dark').index(this)
     let modelTitle = document.querySelector('.modal-title')
-    let arrayCardHeader = document.querySelector('.card-header')
+    let arrayCardHeader = document.querySelectorAll('.card-header')
     let carouselContainer = document.querySelector('.carousel-inner')
-    let btnScarica = document.querySelector(".scarica")
+
 
     $(".carousel-inner").empty()
     let cont=1
-    let numPro = clickedBtnIndex+1
 
     modelTitle.innerText = arrayCardTitoli[clickedBtnIndex]
 
@@ -97,15 +146,46 @@ $(document).on('click','.btn-dark',function(){
         }
         img = document.createElement("img")
         img.setAttribute("class","d-block w-100")
-        img.src = "./img/progetti/PROGETTO " + numPro + "/" + cont + ".png"
+        img.src = "./img/progetti/" + arrayCardHeader[clickedBtnIndex].innerText + "/" + cont + ".png"
         carouselItem.appendChild(img)
         carouselContainer.appendChild(carouselItem)
         cont++
     }
-
-    btnScarica.setAttribute("href","")
-    btnScarica.setAttribute("download",modelTitle.innerText)
 })
+
+$(document).on('click','.scarica',function(){
+    let zip = new JSZip();
+    let src = zip.folder("src")
+
+    let idxJs = readFile(arraylinkIndexJs[clickedBtnIndex]) 
+    console.log(idxJs)
+    src.file("index.js", idxJs);
+    let idxCss = readFile(arraylinkIndexCss[clickedBtnIndex]) 
+    src.file("index.css", idxCss);
+    for(let k=0;k<arraylinkCompNome[clickedBtnIndex].length;k++){
+        let compJs = readFile(arraylinkCompJsLink[0][k])
+        src.file(arraylinkCompNome[0][k]+".js", compJs);
+        let compCss = readFile(arraylinkCompCssLink[0][k])
+        src.file(arraylinkCompNome[0][k]+".css", compCss);
+    }
+
+    zip.generateAsync({type:"blob"})
+    .then(function(content){
+        saveAs(content, arrayCardTitoli[clickedBtnIndex]+".zip")
+    })
+})
+
+async function readFile(url) {
+    const response = await fetch(url)
+    .then(resp => resp.text())
+    .then(data => {
+        return data
+    })
+    .catch(error => {
+        console.error(error);
+    });
+    return response
+}
 
 function navToggler(x) {
     var md = document.querySelector("#menuDiv")
