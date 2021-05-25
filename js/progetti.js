@@ -80,11 +80,13 @@ $(document).on('click','.btn-dark',function(){
     let modelTitle = document.querySelector('.modal-title')
     let arrayCardHeader = document.querySelector('.card-header')
     let carouselContainer = document.querySelector('.carousel-inner')
+    let btnScarica = document.querySelector(".scarica")
+
     $(".carousel-inner").empty()
     let cont=1
     let numPro = clickedBtnIndex+1
 
-    modelTitle.innerHTML = arrayCardTitoli[clickedBtnIndex]
+    modelTitle.innerText = arrayCardTitoli[clickedBtnIndex]
 
     for(let i=0;i<arrayNumImg[clickedBtnIndex];i++){
         carouselItem = document.createElement("div")
@@ -100,6 +102,9 @@ $(document).on('click','.btn-dark',function(){
         carouselContainer.appendChild(carouselItem)
         cont++
     }
+
+    btnScarica.setAttribute("href","")
+    btnScarica.setAttribute("download",modelTitle.innerText)
 })
 
 function navToggler(x) {
