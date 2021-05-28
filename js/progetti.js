@@ -1,4 +1,4 @@
-let url = 'https://raw.githubusercontent.com/Palarvind03/ReactNowJson/main/json/progetti.json'
+let url = 'https://raw.githubusercontent.com/Palarvind03/myData/main/ReactNowJson/json/progetti.json'
 let navToggleCont = 0
 let cardBtnText = "Guarda ora"
 let Index = -1
@@ -162,11 +162,12 @@ $(document).on('click','.scarica',function(){
     src.file("index.js", idxJs);
     let idxCss = readFile(arraylinkIndexCss[clickedBtnIndex]) 
     src.file("index.css", idxCss);
+    alert(arraylinkCompNome[1])
     for(let k=0;k<arraylinkCompNome[clickedBtnIndex].length;k++){
-        let compJs = readFile(arraylinkCompJsLink[0][k])
-        src.file(arraylinkCompNome[0][k]+".js", compJs);
-        let compCss = readFile(arraylinkCompCssLink[0][k])
-        src.file(arraylinkCompNome[0][k]+".css", compCss);
+        let compJs = readFile(arraylinkCompJsLink[clickedBtnIndex][k])
+        src.file(arraylinkCompNome[clickedBtnIndex][k]+".js", compJs);
+        let compCss = readFile(arraylinkCompCssLink[clickedBtnIndex][k])
+        src.file(arraylinkCompNome[clickedBtnIndex][k]+".css", compCss);
     }
 
     zip.generateAsync({type:"blob"})

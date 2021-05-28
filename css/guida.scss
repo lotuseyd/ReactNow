@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: justify;
+}
+
+img{
+    pointer-events: none;
+}
+  
+.navbar-brand{
+    color:#61DAFB !important;
+}
+  
+.nav-link{
+    color: #B4B4B4 !important;
+    margin-right: 22px;
+}
+
+.nav-link:nth-child(2){
+    color: white !important;
+}
+  
+.nav-link:nth-child(1){
+    margin-left: 44px;
+}
+  
+.nav-link:hover{
+    color: white !important;
+}
+  
+.navbar-toggler{
+    border: none;
+}
+  
+.navbar-toggler {
+    display: inline-block;
+    cursor: pointer;
+    z-index: 2;
+}
+    
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+  
+#menuDiv{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+    
+.change .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+    
+.change .bar2 {opacity: 0;}
+    
+.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.sideMenu{
+    background-color: #ededed;
+    height: 91vh;
+    overflow-y: scroll;
+}
+
+.mainMenuTitleGroup{
+    cursor: default;
+    margin-top: 20px;
+}
+
+.mainMenuTitleGroup:nth-child(1){
+    margin-top: 50px;
+}
+
+.bigAgGroup{
+    margin-left: 20px;
+}
+
+.agGroup{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.bigAgGroup:nth-last-child(1){
+    margin-bottom: 50px;
+}
+
+.sideMenuArument{
+    margin-bottom: .5rem;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.sideMenuArumentDropCont{
+    margin-bottom: .5rem;
+    cursor: default;
+}
+
+.sideMenuArumentDrop{
+    margin-bottom: .2rem;
+    cursor: pointer;
+}
+
+.dropD{
+    margin-left: 20px;
+}
+
+.sideMenuArumentDrop:hover, .sideMenuArument:hover{
+    text-decoration: underline;
+} 
+
+.content{
+    height: 91vh;
+    overflow-y: scroll !important;
+}
+
+.expArgument{
+    display: none;
+}
+
+.expArgument:nth-child(1){
+    display: block;
+}
+
+@media (max-width: 576px) { 
+    .content{
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+}
+  
+  
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .content{
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+}
+  
+  // Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .content{
+        padding-right: 50px;
+        padding-left: 10px;
+        padding-top: 50px;
+    }
+}
+  
+  // Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .content{
+        padding-right: 50px;
+        padding-left: 10px;
+        padding-top: 50px;
+    }
+}
+  
+@media (min-width: 1199.98px) { 
+    .sideMenu{
+        padding-left: 50px;
+    }
+    .content{
+        padding-right: 150px;
+        padding-left: 50px;
+        padding-top: 50px;
+    }
+}
