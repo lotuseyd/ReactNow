@@ -51,7 +51,7 @@
                 </div>
               </div>
               <div class="agGroup">
-                <p class="fs-5 sideMenuArument">Estensioni Consigliate</p>
+                <p class="fs-5 sideMenuArument">Strumenti Consigliati</p>
               </div>
             </div>
             <p class="h2 mainMenuTitleGroup" style="overflow-y: hidden;" >Panoramica su CRA</p>
@@ -79,11 +79,7 @@
                 <p class="fs-5 sideMenuArument">Mettodo MAP</p>
               </div>
               <div class="agGroup">
-                <p class="fs-5 sideMenuArumentDropCont">Destrutturazione</p>
-                <div class="dropD">
-                  <div><p class="fs-6 sideMenuArumentDrop sideMenuArument">Normale</p></div>
-                  <p class="fs-6 sideMenuArumentDrop sideMenuArument">Degli array</p>
-                </div>
+                <p class="fs-5 sideMenuArument">Destrutturazione</p>
               </div>
               <div class="agGroup">
                 <p class="fs-5 sideMenuArumentDropCont">Hooks</p>
@@ -121,10 +117,10 @@
               </p>
               <pre class="language-html"><code>&lt;script crossorigin src=&quot;https://unpkg.com/react@17/umd/react.development.js&quot;&gt;&lt;/script&gt;
 &lt;script crossorigin src=&quot;https://unpkg.com/react-dom@17/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;</code></pre><br><br>
-              <p class="fs-5 fw-light">Attenzione, però, quei due script devono essere messi alla fine di tutti gli elementi <b>DOM</b> della pagina HTML(es. div, p, a...). <br>
-              Per cui è consigliato metterili nel body della tua pagina, però alla fine tutti i tag...<br><br><br>
+              <p class="fs-5 fw-light note">Attenzione, però, quei due script devono essere messi alla fine di tutti gli elementi <b>DOM</b> della pagina HTML(es. div, p, a...). <br>
+              Per cui è consigliato metterili nel body della tua pagina, però alla fine tutti i tag...</p><br><br>
             
-              Infine, se non ti interessa includere tutte le funzionalità, ma soltanto quelle principali...potresti povare ad usare la versione minificata:
+              <p class="fs-5 fw-light">Infine, se non ti interessa includere tutte le funzionalità, ma soltanto quelle principali...potresti povare ad usare la versione minificata:
               </p>
               <pre class="language-html"><code>&lt;script crossorigin src=&quot;https://unpkg.com/react@17/umd/react.production.min.js&quot;&gt;&lt;/script&gt;
 &lt;script crossorigin src=&quot;https://unpkg.com/react-dom@17/umd/react-dom.production.min.js&quot;&gt;&lt;/script&gt;</code></pre><br>
@@ -132,19 +128,295 @@
             <div class="expArgument">
               <p class="display-5">React attraverso CRA</p>
               <p class="fs-5 fw-light">
-                Create React app (CRA) è un progetto prototipo che nasce con l'obiettivo di rimuovere le difficoltà di configurazione di webpack. Usa, infatti, webpack e fornisce una configurazione già pronta per essere usata in pochi click. In questo modo ci si può concentrare piu sullo sviluppo dell'applicazione senza pensare troppo alle diverse configurazioni. <br><br>
+                Create React app (CRA) è un progetto prototipo che nasce con l'obiettivo di <b>rimuovere</b> le <b>difficoltà</b> di configurazione di <b>webpack</b>. Usa, infatti, webpack e fornisce una configurazione già pronta per essere usata in pochi click. In questo modo ci si può concentrare piu sullo sviluppo dell'applicazione senza pensare troppo alle diverse configurazioni.<br><br>
                 
-                Requesiti per installazione: <br>
-                <ul>
-                  <li><a href="https://nodejs.org/it/">Node.js</a></li>
-                  <li><a href="https://www.npmjs.com/">Npm</a></li>
+                Requesiti neccessari per l'installazione: <br>
+                <ul class="note">
+                  <li><a href="https://nodejs.org/it/" target="_blank" style="color: #333;">Node.js</a> (su windows, Node nel suo set up include anche Npm)</li>
+                  <li><a href="https://www.npmjs.com/" target="_blank" style="color: #333;">Npm</a></li>
                 </ul>
 
-                Per installare <b>create-react-app</b> possiamo usare NPM. Nel terminale, lanciamo il seguente comando:
-                <pre class="language-html"><code>&lt;script crossorigin src=&quot;https://unpkg.com/react@17/umd/react.production.min.js&quot;&gt;&lt;/script&gt;
-&lt;script crossorigin src=&quot;https://unpkg.com/react-dom@17/umd/react-dom.production.min.js&quot;&gt;&lt;/script&gt;</code></pre><br>
+                </p>
+                <p class="fs-5 fw-light"><br>Una volta soddisfatti i requisiti, spostati in una cartella a piacere ed aprire il terimiale(<b>cmd</b>) nella directory in questione. Ora esguire il seguente commando per dare via all'installazione: </p>
+                <pre style="background-color: #333;color: white;padding: 15px;"><code>D:\mieiProgetti> npx create-reat-app mia-app</code></pre><br>
+
+                <p class="fs-5 fw-light">A questo punto, dopo l'installazione, nella tua directory verrà scaricato una caretella(nel mio caso 'mia-app'). Per verificare se tutto sia andato a buon fine; ti basta spostare nella cartella scaricata ed eseguire:</p>
+                <pre style="background-color: #333;color: white;padding: 15px;"><code>D:\mieiProgetti\mia-app> npm start</code></pre><br>
+
+                <p class="fs-5 fw-light">Subito dopo l'esecuzione del commando, verrà aperto automaticamente una scheda nel browser e se dopo il caricamento...vedi come rafigurato nel l'immagine sotto; allora complimenti: <b>'Hai completato l'operazione con successo!'</b>.</p><br><br>
+                <img src="./img/guida/react-create-app.png" alt="cra" class="img-fluid"><br><br>
+            </div>
+            <div class="expArgument">
+              <p class="display-5">1. Visual studio code</p>
+              <p class="fs-5 fw-light">Il vantaggio di avere questo software come IDE è che sono presenti molte estensioni che permettono di personalizzarne l’uso rendendolo più potente. E non a caso ci sono anche le estensioni Vs per React.</p>
+              <p class="fs-5 fw-light">Per cui due sono, in particolare, le Estensioni che ti consiglio:</p>
+              <p class="fs-5 fw-light note">
+                <b>Nome:</b> Simple React Snippets <br>
+                <b>Autore:</b> Burke Holland
+              </p><br>
+              <p class="fs-5 fw-light note">
+                <b>Nome:</b> ES7 React/Redux/GraphQL/React-Native snippets <br>
+                <b>Autore:</b> dsznajder  
+              </p><br><br>
+              <p class="display-5">2. React Developer Tools</p>
+              <p class="fs-5 fw-light">Altro strumento utile che ti consiglio di installare è 'React Developer Tools' che ti permetterà di
+                visualizzare alcune informazioni sulla struttura della pagina che si genera con React.<br>
+                E’ uno strumento che si installa all'interno del browser ed è disponibile sia per Chrome, sia per Firefox. Sarà sufficiente cercarlo all'interno di
+un qualsiasi motore di ricerca e una volta trovato, aggiungerlo alla lista di estensioni. <br><br>
               </p>
             </div>
+            <div class="expArgument">
+              <p class="display-5">Struttura del CRA</p>
+              <div class="row">
+                <div class="col-12 col-lg-6 col-xl-4 d-flex justify-content-center d-lg-inline mb-3"><img src="./img/guida/strutturaCRA.png" alt="strutturaCRA"></div>
+                <div class="col-12 col-lg-6 col-xl-8">
+                  <p class="fs-5 fw-light">
+                    La cartella <b>node_module</b>, contiene una serie di librerie necessarie a far funzionare
+                    l'ambiente di test oltre che quelle specifiche per il funzionamento di un’applicazione
+                    React.
+                <p><br>
+                <p class="fs-5 fw-light">
+                    Poi troviamo una cartella <b>public</b> che è paragonabile alla classica cartella principale di
+                    un sito Web, in cui è presente un documento index.html, un'icona e un file
+                    manifest.json, necessario per lo sviluppo di Progressive Web App.
+                </p><br>
+                
+                <p class="fs-5 fw-light">
+                    Infine vi è la cartella <b>src</b>, che contiene una serie di file CSS e JavaScript, e sulla
+                    quale andremo a lavorare per creare i diversi file JavaScript che costituiranno la
+                    nostra applicazione.
+                </p>
+                </div>
+              </div>
+            </div>
+            <div class="expArgument">
+              <p class="display-6">Che cosa è JSX?</p>
+              <p class="fs-5 fw-light"><b>JSX</b> sta per JavaScript <b>XML</b>. Utilizzare JSX in react Non è necessario, ma utilizzandolo rende più facile scrivere applicazioni React.</p><br><br>
+              <p class="display-6">A cosa serve JSX?</p>
+              <p class="fs-5 fw-light">JSX ci permette di scrivere elementi HTML in JavaScript e inserirli nel <b>DOM senza</b> usare il metodo <b><code class="codee">createElement()</code></b> o <b><code class="codee">appendChild()</code></b>.</p><br><br> 
+              <p class="display-6">Con e senza JSX</p>
+              <p class="h5">con:</p>
+              <pre class="language-jsx"><code>const guidaReact = &lt;h1&gt;React Now!&lt;/h1&gt;;
+ReactDOM.render(guidaReact, document.getElementById('root'));</code></pre><br>
+              <p class="h5">senza:</p>
+              <pre class="language-js"><code>const guidaReact = React.createElement('h1', {}, 'React Now!');
+ReactDOM.render(guidaReact, document.getElementById('root'));</code></pre><br>
+              <p class="fs-5 fw-light note">Come puoi vedere nel primo esempio, JSX ci permette di<b> scrivere HTML direttamente all'interno del codice JavaScript.</b></p><br><br>
+              <p class="display-6">Espressioni in JSX</p>
+              <p class="fs-5 fw-light">Con JSX puoi scrivere <b>espressioni</b> all'interno di parentesi <b>graffe { }</b>.<br>L'espressione può essere una variabile o una proprietà React o qualsiasi altra espressione JavaScript valida. JSX eseguirà l'espressione e restituirà il risultato:
+              </p><br><pre class="language-jsx"><code>lib = "React";
+const mioTesto =  &lt;h1&gt;{lib+' Now'} è la migliore guida {lib}!&lt;/h1&gt;;
+              </code></pre>
+              <pre class="language-jsx"><code>React Now è la migliore guida React!</code></pre><br>
+            </div>
+            <div class="expArgument">
+              <p class="display-5">Template string</p>
+              <p class="fs-5 fw-light">
+                Le <b>template string</b> permettono di risolvere i problemi di composizione di una stringa complessa con estrema <b>semplicità</b> ed <b>eleganza</b>.
+                Una template string è una <b>sequenza di caratteri</b> delimitata da backtick (<b>`</b>) al posto di singoli o doppi apici.<br> Inoltre non c'è bisogno neanche di preoccupasi per i 'spazi' e 'riga successiva' come in una string nomale..
+                Il seguente è un esempio di template string:
+                <pre class="language-jsx"><code>let valore = 5;
+let valoreIniziale = 7;
+let valoreIniziale = 11;
+let msg = `Errore
+Il valore inserito {valore} non è valido. Deve essere compreso tra {valoreIniziale} e {valoreFinale}.
+Riprovare.`;</code></pre><br>
+                <pre class="language-jsx"><code>Errore
+Il valore inserito 5 non è valido. Deve essere compreso tra 7 e 11.
+Riprovare.</code></pre><br>
+              </p>
+            </div>
+            <div class="expArgument"> 
+              <p class="display-5">Funzioni Tradizionali</p>
+              <p class="h4">1. sintassi: </p>
+              <pre class="language-jsx"><code>function guidaReact(){
+  alert("React Now!");       
+}
+
+guidaReact(); // invocazione funzione</code></pre><br><br>
+
+              <p class="h4">2. Argomenti: </p>
+              <pre class="language-jsx"><code>function guidaReact(lib){
+  alert(lib+" Now!");       
+}
+
+guidaReact("React"); // invocazione funzione</code></pre><br><br>
+              <p class="h4">3. Return: </p>
+<pre class="language-jsx"><code>function somma(primoNumero, secondoNumero){
+  return primoNumero + secondoNumero;
+}
+
+let risultatoSomma = somma(1,5); // invocazione funzione
+alert(risultatoSomma);
+</code></pre><br><br><br>
+            </div>
+            <div class="expArgument">  
+              <p class="display-5">Funzioni Arrow</p>            
+              <p class="h4">1. sintassi: </p>
+              <pre class="language-jsx"><code>const = guidaReact() => alert("React Now!");       
+
+guidaReact(); // invocazione funzione</code></pre><br><br>
+
+              <p class="h4">2. Argomenti: </p>
+              <pre class="language-jsx"><code>const = guidaReact(lib) => alert(lib+" Now!"); 
+   
+guidaReact("React"); // invocazione funzione</code></pre><br><br>
+              <p class="h4">3. Return: </p>
+<pre class="language-jsx"><code>const = somma(primoNumero,secondoNumero) => {
+  return primoNumero + secondoNumero;
+}
+
+let risultatoSomma = somma(1,5); // invocazione funzione
+alert(risultatoSomma);
+</code></pre><br><br><br>
+            </div>
+            <div class="expArgument">
+              <p class="display-5">Mettodo map()</p>
+              <p class="fs-5 fw-light">
+                Il metodo <code class="codee">Array.map()</code> consente nel iterare un array e modificare i suoi elementi utilizzando una funzione di callback.<br>
+                La funzione di callback verrà quindi eseguita su ciascuno degli elementi dell'array.<br><br>
+
+                Ad esempio, supponiamo di avere il seguente vettore:<br>
+              </p>
+              <pre class="language-js"><code>let vet = [3, 4, 5, 6];</code></pre><br><br>
+              <p class="fs-5 fw-light">Ora immagina di dover moltiplicare ciascuno degli elementi dell'array per 3. Potresti considerare di utilizzare un ciclo for come segue:</p>
+              <pre class="language-js"><code>let vet = [3, 4, 5, 6];
+
+for (let i = 0; i < vet.length; i++){
+  vet[i] = vet[i] * 3;
+}
+                
+console.log(vet); //output --> [9, 12, 15, 18]
+</code></pre><br><br><br>
+            <p class="fs-5 fw-light note">Puoi però utilizzare anche il metodo <code class="codee">Array.map()</code> per ottenere lo stesso risultato. Ecco un esempio:</p>
+            <pre class="language-js"><code>let vet = [3, 4, 5, 6];
+
+let vetModificato = vet.map(function(elemento){
+    return elemento *3;
+});
+
+console.log(vetModificato); //output --> [9, 12, 15, 18]
+</code></pre><br><br><br>
+            </div>
+            <div class="expArgument">
+              <p class="display-5">La Destrutturazione</p>   
+              <p class="fs-5 fw-light">
+                <b>La destrutturazione</b> consente di assegnare le proprietà di un array o di un oggetto utilizzando una sintassi simile ai valori letterali di array o oggetti. Questa sintassi inoltre permette di <b>gestire meglio il codice</b> rispetto all'accesso tradizionale alla proprietà.<br><br>
+              </p>
+              <p class="fs-5 fw-light note">
+                Senza destrutturare l'assegnazione, potresti accedere ai primi tre elementi di un array in questo modo:
+              </p>
+            <pre class="language-js"><code>let vet = [1,2,3]
+
+let primo = vet[0];
+let secondo = vet[1];
+let terzo = vet[2];
+
+console.log(secondo) //output --> 2
+</code></pre><br><br>
+            <p class="fs-5 fw-light note">
+              Con la destrutturazione, invece, il codice equivalente diventa più <b>conciso</b> e <b>leggibile</b> 
+            </p>
+            <pre class="language-js"><code>let vet = [1,2,3]
+
+let [primo, secondo, terzo] = vet;
+
+console.log(secondo) //output --> 2</code></pre><br><br>
+
+              <p class="h4">Altri usi</p><br>
+              <p class="fs-5 fw-light">1) Puoi saltare gli elementi dell'array che vengono destrutturati:</p>
+
+            <pre class="language-js"><code>let [,,third] = ["pippo", "pluto", "topolino"];
+
+console.log(first); //output --> "pippo"</code></pre><br><br>
+
+              <p class="fs-5 fw-light">2) Puoi catturare tutti gli elementi finali in un array:</p>
+
+              <pre class="language-js"><code>let [primo, ...altri] = [1, 2, 3, 4];
+
+console.log(primo); //output --> 1
+console.log(altri); //output --> [2, 3, 4]</code></pre><br><br>
+
+              <p class="fs-5 fw-light">Destrutturazione degli oggetti</p>
+              <pre class="language-js"><code>let { matteo, alessio } = { cognome1: "rossi", cognome2: "bruno" };
+console.log(matteo); // output --> rossi
+console.log(alessio); // output --> bruno</code></pre><br><br>
+            </div>
+            <div class="expArgument">
+              <p class="display-5">useState Hook</p>
+              <p class="fs-5 fw-light"><code class="codee">useState</code> è un <b>Hook</b> che ti permette di avere variabili di stato. Basta passare a questa funzione <b>lo stato iniziale</b> e ti restituisce una variabile con il valore dello stato corrente (non necessariamente lo stato iniziale) e un'altra funzione per aggiornare questo valore.</p><br>
+              <p class="fs-5 fw-light note">Prima di utilizzare questa funzione però occorre importarlo: </p>
+              <pre class="language-js"><code>import React, { useState } from 'react';</code></pre><br><br>
+              <p class="h4">sintassi<p>
+              <pre class="language-js"><code>const [variabile, setVariabile] = useState(1);</code></pre><br><br>     
+              <p class="h4">Come accedere alla variabile dello useState?</p>
+              <pre class="language-jsx"><code>const [msg, setMsg] = useState("ciao");
+
+&lt;p&gt;{msg}&lt;/p&gt;</code></pre><br><br> 
+              <p class="h4">Come modificare la variabile dello useState?</p>
+              <pre class="language-jsx"><code>const [msg, setMsg] = useState("ciao");
+
+setMsg("ciao ciao")
+&lt;p&gt;{msg}&lt;/p&gt;</code></pre><br><br> 
+            </div>
+            <div class="expArgument">
+              <p class="display-5">Creazione dei componenti con la libreria</p>   
+            </div>
+            <div class="expArgument">
+              <p class="display-5">Creazione dei componenti con CRA</p>   
+            </div>
+            <div class="expArgument">
+              <p class="display-5">Le promise</p>   
+              <p class="h4">Cos'è la promise(promessa)?</p>
+              <p class="fs-5 fw-light note"><b>La promise</b> rappresentano il risultato di un'operazione asincrona. Per farla breve puoi pensarlo come un segnaposto per un risultato che alla fine riceverai.</p><br>
+              <p class="h4">Tre stati di promessa</p><br>
+              <p class="fs-5 fw-light"><b class="codee">In attesa</b> → Prima che il risultato sia pronto, una promessa è in uno stato in sospeso.br<br>
+                <b class="codee">Eseguito</b> → Se il risultato è disponibile, diventa soddisfatto.<br>
+                <b class="codee">Rifiutato</b> → Se si verifica un errore, la promessa viene rifiutata.</p><br>
+              <p class="h4">Sintassi</p>
+              <pre class="language-js"><code>let miaPromise=new Promise(function(resolve, reject){
+
+  //operazione asincron va qua...
+
+})</code></pre><br><br> 
+            <p class="h4">mettodo then()</p>
+            <p class="fs-5 fw-light">Il mettodo <code class="codee">then()</code> viene utilizzato per fare tutte operazioni che verrano eseguire dopo che la promessa avrà dato una risposta. Questo mettodo ha argomenti opzionali:<br>
+            1) callback per il successo <br>
+            2) callback per il fallimento
+            </p><br>
+            <p class="h4">Esempio completo</p>
+            <pre class="language-js"><code>let miaPromise=new Promise(function(resolve, reject){
+
+  //operazione asincron va qua...
+
+})
+
+miaPromise.then((risposta) => {
+  //istruzioni dopo il successo
+},(errore) => {
+  //istruzioni dopo l'errore
+});</code></pre><br><br> 
+            </div>
+            <div class="expArgument">
+              <p class="display-5">Fetch API</p>  
+              <p class="fs-5 fw-light">L'API Fetch è un'interfaccia moderna che consente di effettuare richieste HTTP ai server dai web browser. Utilizza, inoltre, <code class="codee">Promise</code> per fornire funzionalità più flessibili...</p><br>
+              <p class="fs-5 fw-light">Il <code class="codee">fetch()</code> richiede un solo parametro che è l'URL della risorsa che vuoi recuperare:</p>
+              <pre class="language-js"><code>let risposta = fetch(url);</code></pre><br><br> 
+              <p class="h4">Cosa restuisce?</p>
+              <p class="fs-5 fw-light">Il metodo fetch () restituisce una promessa in modo da poter utilizzare i metodi then() e catch() per gestirla:<br>
+              <code class="codee">then()</code> → per eserguire le istruzioni dopo il <b>completamento</b> della richiesta <br>
+              <code class="codee">catch()</code> → per eserguire le istruzioni dopo il <b>fallimento</b> della richiesta
+              </p><br>
+              <p class="h4">Esempio completo</p>
+              <pre class="language-js"><code>url = "http://reactNow.it""
+  
+fetch(url)
+   .then(risposta => {
+      console.log(risposta);
+   })
+   .catch(error => console.log("Si è verificato un errore!"))</code></pre><br><br> 
+            </div>
+          </div>
           </div>
         </div>
     </div>

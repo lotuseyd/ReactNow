@@ -2,8 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
     text-align: justify;
+    overflow: hidden;
 }
 
 img{
@@ -48,6 +48,32 @@ img{
     margin: 6px 0;
     transition: 0.4s;
 }
+
+.loader{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 10;
+    min-height: 250px;
+}
+  
+.loaderLogoAnime{
+    animation-name: logoLoader;
+    animation-duration: .9s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+  
+@keyframes logoLoader {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+}
+  
   
 #menuDiv{
     position: absolute;
@@ -129,6 +155,16 @@ img{
 
 .expArgument:nth-child(1){
     display: block;
+}
+
+.note{
+    border-left: solid 3px rgba(97, 218, 251, 0.3);
+    padding: 8px;
+}
+
+.codee{
+    background-color: rgba(97, 218, 251, 0.3);
+    color: #333;
 }
 
 @media (max-width: 576px) { 

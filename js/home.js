@@ -1,5 +1,16 @@
 var navToggleCont = 0
 
+document.body.style.overflow = "hidden"
+loaderTime = Math.floor(Math.random() * 2500) + 1000;
+
+setTimeout(function(){
+    let loaderWin = document.querySelector(".loader")
+    let loaderImg = document.querySelector(".loaderLogoAnime")
+    loaderWin.style.zIndex = "-10"
+    document.body.style.overflow = "visible"
+    loaderImg.style.display = "none"
+}, loaderTime)
+
 function navToggler(x) {
     var md = document.querySelector("#menuDiv")
     var bar1 = document.querySelector(".bar1")

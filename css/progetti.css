@@ -49,6 +49,48 @@ img {
   transition: 0.4s;
 }
 
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 10;
+  min-height: 250px;
+}
+
+.loaderLogoAnime {
+  -webkit-animation-name: logoLoader;
+          animation-name: logoLoader;
+  -webkit-animation-duration: .9s;
+          animation-duration: .9s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes logoLoader {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes logoLoader {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 #menuDiv {
   position: absolute;
   width: 100%;

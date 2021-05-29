@@ -1,3 +1,14 @@
+document.body.style.overflow = "hidden"
+loaderTime = Math.floor(Math.random() * 2500) + 1000;
+
+setTimeout(function(){
+    let loaderWin = document.querySelector(".loader")
+    let loaderImg = document.querySelector(".loaderLogoAnime")
+    loaderWin.style.zIndex = "-10"
+    document.body.style.overflow = "visible"
+    loaderImg.style.display = "none"
+}, loaderTime)
+
 let url = 'https://raw.githubusercontent.com/Palarvind03/myData/main/ReactNowJson/json/progetti.json'
 let navToggleCont = 0
 let cardBtnText = "Guarda ora"
@@ -46,8 +57,8 @@ fetch(url)
         if(progetto.difficolta=="Facile"){
             cardBadge.innerText = "Facile"
             cardBadge.setAttribute("class","badge bg-success")
-        }else if(progetto.difficolta=="Mediocre"){
-                cardBadge.innerText = "Mediocre"
+        }else if(progetto.difficolta=="Medio"){
+                cardBadge.innerText = "Medio"
                 cardBadge.setAttribute("class","badge bg-warning")  
             }else if(progetto.difficolta=="Difficile"){
                     cardBadge.innerText = "Difficile"

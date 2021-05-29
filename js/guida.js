@@ -1,14 +1,26 @@
 let navToggleCont = 0
+
+let loaderTime = Math.floor(Math.random() * 2500) + 1000;
+
+setTimeout(function(){
+    let loaderWin = document.querySelector(".loader")
+    let loaderImg = document.querySelector(".loaderLogoAnime")
+    loaderWin.style.zIndex = "-10"
+    loaderImg.style.display = "none"
+}, loaderTime)
+
 let numArgument = document.querySelectorAll(".sideMenuArument")
 let expA = document.querySelectorAll(".expArgument")
 
-for (let i = 0 ; i < 2; i++) {
+for (let i = 0 ; i < numArgument.length; i++) {
     numArgument[i].addEventListener('click' , function(){
-        for(let k=0;k<2; k++){
-            numArgument[k].style.backgroundColor = "transparent"
+        for(let k=0;k<numArgument.length; k++){
+            numArgument[k].style.color = "#333"
+            numArgument[k].style.textDecoration = "none"
             expA[k].style.display = "none"
         }
-        numArgument[i].style.backgroundColor = "#61DAFB"
+        numArgument[i].style.textDecoration = "underline"
+        numArgument[i].style.color = "#61DAFB"
         expA[i].style.display = "block"
     }, false) ; 
 }
