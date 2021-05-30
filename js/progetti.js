@@ -173,7 +173,6 @@ $(document).on('click','.scarica',function(){
     src.file("index.js", idxJs);
     let idxCss = readFile(arraylinkIndexCss[clickedBtnIndex]) 
     src.file("index.css", idxCss);
-    alert(arraylinkCompNome[1])
     for(let k=0;k<arraylinkCompNome[clickedBtnIndex].length;k++){
         let compJs = readFile(arraylinkCompJsLink[clickedBtnIndex][k])
         src.file(arraylinkCompNome[clickedBtnIndex][k]+".js", compJs);

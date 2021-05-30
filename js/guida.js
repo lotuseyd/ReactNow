@@ -11,6 +11,7 @@ setTimeout(function(){
 
 let numArgument = document.querySelectorAll(".sideMenuArument")
 let expA = document.querySelectorAll(".expArgument")
+let statoLez
 
 for (let i = 0 ; i < numArgument.length; i++) {
     numArgument[i].addEventListener('click' , function(){
@@ -19,9 +20,11 @@ for (let i = 0 ; i < numArgument.length; i++) {
             numArgument[k].style.textDecoration = "none"
             expA[k].style.display = "none"
         }
+        statoLez = i
         numArgument[i].style.textDecoration = "underline"
         numArgument[i].style.color = "#61DAFB"
         expA[i].style.display = "block"
+
     }, false) ; 
 }
 
@@ -48,4 +51,56 @@ function navToggler(x) {
         mbtn.style.zIndex = "11"
     }
     x.classList.toggle("change");
+}
+
+function indietro(){
+    if(statoLez > 0){
+        for(let k=0;k<numArgument.length; k++){
+            numArgument[k].style.color = "#333"
+            numArgument[k].style.textDecoration = "none"
+            expA[k].style.display = "none"
+        }
+        statoLez = statoLez - 1 
+        numArgument[statoLez].style.textDecoration = "underline"
+        numArgument[statoLez].style.color = "#61DAFB"
+        expA[statoLez].style.display = "block"  
+    }
+}
+
+function avanti(){
+    if(statoLez < numArgument.length-1){
+        for(let k=0;k<numArgument.length; k++){
+            numArgument[k].style.color = "#333"
+            numArgument[k].style.textDecoration = "none"
+            expA[k].style.display = "none"
+        }
+        statoLez = statoLez + 1 
+        numArgument[statoLez].style.textDecoration = "underline"
+        numArgument[statoLez].style.color = "#61DAFB"
+        expA[statoLez].style.display = "block" 
+    }
+}
+
+function cliccaQui1(){
+    numArgument[statoLez].style.color = "#333"
+    numArgument[statoLez].style.textDecoration = "none"
+    expA[statoLez].style.display = "none"
+
+    statoLez = 0
+
+    numArgument[statoLez].style.textDecoration = "underline"
+    numArgument[statoLez].style.color = "#61DAFB"
+    expA[statoLez].style.display = "block" 
+}
+
+function cliccaQui2(){
+    numArgument[statoLez].style.color = "#333"
+    numArgument[statoLez].style.textDecoration = "none"
+    expA[statoLez].style.display = "none"
+
+    statoLez = 1
+
+    numArgument[statoLez].style.textDecoration = "underline"
+    numArgument[statoLez].style.color = "#61DAFB"
+    expA[statoLez].style.display = "block" 
 }

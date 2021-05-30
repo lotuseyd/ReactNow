@@ -41,7 +41,7 @@
     <div class="w-100">
         <div class="row">
           <div class="d-none d-md-block col-md-4 sideMenu">
-            <p class="h2 mainMenuTitleGroup" style="overflow-y: hidden;" >Set up</p>
+            <p class="h2 mainMenuTitleGroup" style="overflow-y: hidden;" id="root2" >Set up</p>
             <div class="bigAgGroup">
               <div class="agGroup">
                 <p class="fs-5 sideMenuArumentDropCont">Installazione</p>
@@ -54,7 +54,7 @@
                 <p class="fs-5 sideMenuArument">Strumenti Consigliati</p>
               </div>
             </div>
-            <p class="h2 mainMenuTitleGroup" style="overflow-y: hidden;" >Panoramica su CRA</p>
+            <p class="h2 mainMenuTitleGroup text-start" style="overflow-y: hidden;" >Panoramica su CRA</p>
             <div class="bigAgGroup">
               <div class="agGroup">
                 <p class="fs-5 sideMenuArument">Struttura del progetto</p>
@@ -107,26 +107,29 @@
               </div>
             </div>
           </div>
-
+          
           <div class="col-12 col-sm-12 col-md-8 content ">
+            <div id="root"></div>
             <div class="expArgument">
               <p class="display-5">React attraverso la libreria</p>
               <p class="fs-5 fw-light">Il mettodo più <b>facile</b> e <b>veloce</b> per poter iniziare ad utilizzare React è attraverso importazione della sua libreria, con i cosidetti<b> CDN</b>. <br><br>
               Questo processo <b>non</b> richiede alcuni requisiti di installazione da soddisfare o strumenti complicati da utilizzare, dunque ti servono solamente una connessione a internet e pochissimi secondi del tuo tempo. <br><br>
               L'operazione consiste, semplicemente, nel riportare nel tuo codice <b>HTML</b> i seguenti script:<br>
               </p>
-              <pre class="language-html"><code>&lt;script crossorigin src=&quot;https://unpkg.com/react@17/umd/react.development.js&quot;&gt;&lt;/script&gt;
+            <pre class="language-html"><code>&lt;script src=&quot;https://unpkg.com/babel-standalone@6/babel.js&quot;&gt;&lt;/script&gt;
+&lt;script crossorigin src=&quot;https://unpkg.com/react@17/umd/react.development.js&quot;&gt;&lt;/script&gt;
 &lt;script crossorigin src=&quot;https://unpkg.com/react-dom@17/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;</code></pre><br><br>
               <p class="fs-5 fw-light note">Attenzione, però, quei due script devono essere messi alla fine di tutti gli elementi <b>DOM</b> della pagina HTML(es. div, p, a...). <br>
               Per cui è consigliato metterili nel body della tua pagina, però alla fine tutti i tag...</p><br><br>
             
               <p class="fs-5 fw-light">Infine, se non ti interessa includere tutte le funzionalità, ma soltanto quelle principali...potresti povare ad usare la versione minificata:
               </p>
-              <pre class="language-html"><code>&lt;script crossorigin src=&quot;https://unpkg.com/react@17/umd/react.production.min.js&quot;&gt;&lt;/script&gt;
+              <pre class="language-html"><code>&lt;script src=&quot;https://unpkg.com/babel-standalone@6/babel.min.js&quot;&gt;&lt;/script&gt;
+&lt;script crossorigin src=&quot;https://unpkg.com/react@17/umd/react.production.min.js&quot;&gt;&lt;/script&gt;
 &lt;script crossorigin src=&quot;https://unpkg.com/react-dom@17/umd/react-dom.production.min.js&quot;&gt;&lt;/script&gt;</code></pre><br>
             </div>
             <div class="expArgument">
-              <p class="display-5">React attraverso CRA</p>
+              <p id="start" class="display-5">React attraverso CRA</p>
               <p class="fs-5 fw-light">
                 Create React app (CRA) è un progetto prototipo che nasce con l'obiettivo di <b>rimuovere</b> le <b>difficoltà</b> di configurazione di <b>webpack</b>. Usa, infatti, webpack e fornisce una configurazione già pronta per essere usata in pochi click. In questo modo ci si può concentrare piu sullo sviluppo dell'applicazione senza pensare troppo alle diverse configurazioni.<br><br>
                 
@@ -146,7 +149,7 @@
                 <p class="fs-5 fw-light">Subito dopo l'esecuzione del commando, verrà aperto automaticamente una scheda nel browser e se dopo il caricamento...vedi come rafigurato nel l'immagine sotto; allora complimenti: <b>'Hai completato l'operazione con successo!'</b>.</p><br><br>
                 <img src="./img/guida/react-create-app.png" alt="cra" class="img-fluid"><br><br>
             </div>
-            <div class="expArgument">
+            <div  class="expArgument">
               <p class="display-5">1. Visual studio code</p>
               <p class="fs-5 fw-light">Il vantaggio di avere questo software come IDE è che sono presenti molte estensioni che permettono di personalizzarne l’uso rendendolo più potente. E non a caso ci sono anche le estensioni Vs per React.</p>
               <p class="fs-5 fw-light">Per cui due sono, in particolare, le Estensioni che ti consiglio:</p>
@@ -360,13 +363,72 @@ setMsg("ciao ciao")
 &lt;p&gt;{msg}&lt;/p&gt;</code></pre><br><br> 
             </div>
             <div class="expArgument">
-              <p class="display-5">Creazione dei componenti con la libreria</p>   
+              <p class="display-5">Creazione dei componenti con la libreria</p><br>
+              <p class="h4">Step 1: Aggiungere libreria</p>
+              <p class="fs-5 fw-light">La prima cosa da fare è quello aggiungere <b class="code">la libreria</b> React alla tua pagina Html. Se non sai ancora come si fa...<a onclick="cliccaQui1()" href="#root2" class="codee" style="cursor: pointer;">clicca qui</a></p><br><br>
+              <p class="h4">Step 2: creare un Contenitore DOM</p>
+              <p class="fs-5 fw-light">Ora, una volta aggiunta la libreria, Aggiungi un tag <code class="codee">&lt;div&gt;</code> vuoto(sopra tutti gli script) per contrassegnare il punto in cui vuoi visualizzare qualcosa con React. Ad esempio:</p>
+              <pre class="language-html"><code>&lt;div id=&quot;mioContenitore&quot;&gt;&lt;/div&gt;</code></pre><br><br>
+              <p class="h4">Step 3: Crezione componente</p>
+              <p class="fs-5 fw-light">A questo punto non ci resta altro che creare il nostro componente, per crearlo prima però, abbiamo bisogno di uno <code class="codee">script</code>(con type="text/babel"). Una volta creato, lo script, dentro metteremo due istruzioni: </p>
+              <p class="h6">prima istruzione: </p>
+              <pre class="language-js"><code>const contenitore = document.querySelector('#mioContenitore'); //per catturare contenitore DOM che si trova nel HTML</code></pre><br>
+              <p class="h6">seconda istruzione: </p>
+              <pre class="language-js"><code>mioComponenteReact = &lt;p&gt;sono un componente React&lt;/p&gt; //per creare componente react
+ReactDOM.render(mioComponenteReact, contenitore); //per mettere componente creato all'interno del contenitore DOM</code></pre><br><br>
+
+              <p class="h4">Esercizio completo</p>
+              <pre class="language-html language-js">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;it&quot;&gt;
+&lt;head&gt;
+&lt;title&gt;React | primo componente&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+                
+&lt;div id=&quot;mioContenitore&quot;&gt;&lt;/div&gt;
+                
+&lt;script src=&quot;https://unpkg.com/babel-standalone@6/babel.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/react@17/umd/react.development.js&quot; crossorigin&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/react-dom@17/umd/react-dom.development.js&quot; crossorigin&gt;&lt;/script&gt;
+                  
+&lt;script type=&quot;text/babel&quot;&gt;
+    const contenitore = document.querySelector('#mioContenitore');
+    ReactDOM.render(&lt;p&gt;sono un componente React&lt;/p&gt;, cont);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><br><br>
             </div>
             <div class="expArgument">
               <p class="display-5">Creazione dei componenti con CRA</p>   
-            </div>
+              <p class="h4">Step 1: Scaricare CRA</p>
+              <p class="fs-5 fw-light">La prima cosa da fare è quello scaricare <b class="code">create-reat-app</b>. Se non sai ancora come si fa...<a onclick="cliccaQui2()" href="#root2" class="codee" style="cursor: pointer;">clicca qui</a></p><br><br>
+              <p class="h4">Step 2: Creare file per il componente</p>
+              <p class="fs-5 fw-light">Ora, una volta scaricato il progetto prototipo, bisogna andare nella cartella <code class="codee">src</code> del progetto e creare li un file javascipt per il componente... <br><br>
+                Es: MioComponenteReact.js
+              </p>
+              <p class="fs-5 fw-light note">Attenzione, <b class="codee">la prima lettera</b> del file del componente deve essere <b class="codee">Maiuscola</b></p><br>
+              <p class="h4">Step 3: Creazione componente</p>
+              <pre class="language-jsx"><code>// file --> MioComponenteReact.js
+import React from 'react';
+
+export const MioComponente = () =&gt; {
+    return (
+      &lt;p&gt;Sono un componente React&lt;/p&gt;
+    )
+}</code></pre><br>
+            <p class="fs-5 fw-light">come si può vedere, per creare il componente la prima cosa dobbiamo fare è quello di importare <code class="">'react'</code>  che si trova nella libreria <b>React</b>. Poi attraverso <code class="codee">export</code> addiamo ad esportare tutto quello che si trova dopo, in questo caso una funzione che creare il nostro componente React e poi con il return lo restituisce all'export.</p><br>
+            <p class="h4">Step 4: passo finale</p>
+            <p>infine, non ci resta altro che mettere il componente creato nella pagina HTML(index.html). Per fare ciò, dobbiamo andare nel file index.js e scrivere: </p>
+<pre class="language-jsx"><code>// file --> index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import {MioComponente} from './MioComponenteReact';
+
+ReactDOM.render(&lt;MioComponente /&gt;,document.getElementById('root'));</code></pre><br>
+          </div>
             <div class="expArgument">
-              <p class="display-5">Le promise</p>   
+              <p id="start" class="display-5">Le promise</p>   
               <p class="h4">Cos'è la promise(promessa)?</p>
               <p class="fs-5 fw-light note"><b>La promise</b> rappresentano il risultato di un'operazione asincrona. Per farla breve puoi pensarlo come un segnaposto per un risultato che alla fine riceverai.</p><br>
               <p class="h4">Tre stati di promessa</p><br>
@@ -398,7 +460,7 @@ miaPromise.then((risposta) => {
 });</code></pre><br><br> 
             </div>
             <div class="expArgument">
-              <p class="display-5">Fetch API</p>  
+              <p  class="display-5">Fetch API</p>  
               <p class="fs-5 fw-light">L'API Fetch è un'interfaccia moderna che consente di effettuare richieste HTTP ai server dai web browser. Utilizza, inoltre, <code class="codee">Promise</code> per fornire funzionalità più flessibili...</p><br>
               <p class="fs-5 fw-light">Il <code class="codee">fetch()</code> richiede un solo parametro che è l'URL della risorsa che vuoi recuperare:</p>
               <pre class="language-js"><code>let risposta = fetch(url);</code></pre><br><br> 
@@ -416,12 +478,20 @@ fetch(url)
    })
    .catch(error => console.log("Si è verificato un errore!"))</code></pre><br><br> 
             </div>
-          </div>
+            <div class="row d-flex d-md-none mb-4">
+              <div class="col m-0">
+                <a href="#root" class="btn btn-dark" onclick="indietro()">Precedente</a>
+              </div>
+              <div class="col d-flex justify-content-end m-0">
+                <a href="#root" class="btn btn-dark" onclick="avanti()">Prossimo</a>
+              </div>
+            </div>
           </div>
         </div>
     </div>
     <script src="./js/guida.js"></script>
     <script src="./prism/prism.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
