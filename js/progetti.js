@@ -9,7 +9,7 @@ setTimeout(function(){
     loaderImg.style.display = "none"
 }, loaderTime)
 
-let url = 'https://raw.githubusercontent.com/Palarvind03/myData/main/ReactNowJson/json/progetti.json'
+let url = 'https://raw.githubusercontent.com/justDevendra/myData/main/ReactNowJson/json/progetti.json'
 let navToggleCont = 0
 let cardBtnText = "Guarda ora"
 let Index = -1
