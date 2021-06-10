@@ -121,7 +121,7 @@ fetch(url)
 
           <ul class="list-unstyled">
             <li>
-              <a href="https://github.com/Palarvind03" target="_blank" class="text-white">Arvind Pal</a>
+              <a href="https://github.com/justDevendra" target="_blank" class="text-white">Arvind Pal</a>
             </li>
           </ul>
         </div>
